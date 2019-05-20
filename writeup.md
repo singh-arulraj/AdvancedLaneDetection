@@ -107,3 +107,11 @@ I have used sliding window method to identify the lanes. Initially, I faced an i
 * Radius of curvature of 2 lanes do not match
 * If the lanes near the base of the image has broken lines, algorithm finds it difficut to correct the starting position
 * The lanes in frames of the video are not smooth.
+
+The current implementation might fail when there are varying brightness in the images. 
+The algorithm might also have issues on old roads where the lane markings become dull. 
+If there is another vehicle on the same lane or a vehicle driving on close by lanes the pipeline is likely to fail to identify the left and right base position.
+
+To overcome this, region of intereset should be masked. On the filtered image, binary thresholding should be performed.
+
+
